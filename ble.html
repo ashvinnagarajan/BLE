@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Bluetooth Data</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+      <script src="https://unpkg.com/p5ble@0.0.4/dist/p5.ble.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      <script src="https://unpkg.com/mathjs@6.5.0/dist/math.min.js"></script>
+    </head>
+
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="active nav-link lead" href="https://scholar.google.co.in/citations?user=gx2_VaEAAAAJ&hl=en">S. Benedict</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link lead" href="http://www.ucla.edu/">UCLA</a>
+            </li>
+            <li class="nav-item">
+              <a  class="nav-link lead" href="https://www.chips.ucla.edu/">CHIPS Lab</a> 
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container-fluid vertical-center text-center">
+      <div>
+        <h1 class="heading display-3 text-center">Bluetooth Low Energy Data</h1>
+      </div>
+      <br/>
+      <div class="d-inline-flex my-auto">
+        <p class="large-text lead">Press this button to connect to your device: &nbsp; </p>
+        <button type="button" class="btn btn-secondary" onclick="connectToBle()">Connect</button>
+      </div>
+      <hr/>
+      <div class="d-inline-flex my-auto">
+        <p class="heading text-center lead large-text">ADC Value: &nbsp;</p>
+        <p class="heading text-center lead large-text" id="data">No Data Avail</p>
+      </div>
+      <br/>
+      <div class="d-inline-flex my-auto">
+        <p class="heading text-center lead large-text">Average: &nbsp;</p>
+        <p class="heading text-center lead large-text" id="avg">No Data Avail</p>
+      </div>
+      <br/>
+      <div class="d-inline-flex my-auto">
+        <p class="heading text-center lead large-text">Standard Deviation: &nbsp;</p>
+        <p class="heading text-center lead large-text" id="stddev">No Data Avail</p>
+      </div>
+     <hr/>
+      <div class="d-inline-flex my-auto">
+        <p class="large-text lead">Press this button to download your ADC data: &nbsp; </p>
+        <button type="button" class="btn btn-secondary" onclick="download(csvContent, 'adc_data.csv', 'text/csv;encoding:utf-8')">Download</button>
+      </div>
+    </div>
+    
+    <script src="scripts.js"></script>
+    </body>
+  </html>
